@@ -4,6 +4,7 @@ from datetime import datetime
 Lakewood = Hoteis('Lakewood', 3, [110, 80], [90, 80])
 Bridgewood = Hoteis('Bridgewood', 4, [160, 110], [60, 50])
 Ridgewood = Hoteis('Ridgewood', 5, [220, 100], [150, 40])
+lista_hoteis = [Lakewood, Bridgewood, Ridgewood]
 
 def get_cheapest_hotel(number):   #DO NOT change the function's name
     cheapest_hotel = "cheapest_hotel_name"
@@ -36,13 +37,23 @@ def conta_dias(datas):
 
 ds, dfds = conta_dias(datas)
 
-hoteis = [Lakewood, Bridgewood, Ridgewood]
-
 valores = []
-for x in hoteis:
+for x in lista_hoteis:
     valores.append(x.calcula_estadia(tc, ds, dfds))
 
-'''
+menor_valor = 1000
+
 for x in valores:
-    print(x[0])
-'''
+    if menor_valor > x[0]: # encontrando o menor valor
+        menor_valor = x[0]
+        melhor_hotel = x[2]
+        classificacao = x[1]
+
+    elif menor_valor == x[0] and classificacao < x[1]:
+        melhor_hotel = x[2]
+        classificacao = x[1]
+
+print(menor_valor, melhor_hotel, classificacao)
+
+#print(melhor_hotel)
+
