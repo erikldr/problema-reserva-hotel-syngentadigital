@@ -23,4 +23,3 @@ Para rodar os testes basta executar o pytest no diretorio raiz
 ```
 $ py.test
 ```
-[Texto alternativo opcional se a imagem não carregar](https://www.syngentadigital.com.br/sites/g/files/zhg1496/f/media/2020/06/12/syt-logo_footer_1.png)
