@@ -1,5 +1,5 @@
-from hoteis import Hoteis
-import processamento
+from src.hoteis import Hoteis
+import src.processamento as processamento
 
 Lakewood = Hoteis('Lakewood', 3, [110, 80], [90, 80])
 Bridgewood = Hoteis('Bridgewood', 4, [160, 110], [60, 50])
@@ -21,7 +21,6 @@ def get_cheapest_hotel(entrada):   #DO NOT change the function's name
 entrada1 = 'Regular: 16Mar2009(mon), 17Mar2009(tues), 18Mar2009(wed)'
 entrada2 = 'Regular: 20Mar2009(fri), 21Mar2009(sat), 22Mar2009(sun)'
 entrada3 = 'Rewards: 26Mar2009(thur), 27Mar2009(fri), 28Mar2009(sat)'
-
 
 get_cheapest_hotel(entrada3)
 
