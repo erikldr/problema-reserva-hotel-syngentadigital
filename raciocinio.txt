@@ -1,58 +1,20 @@
-Ola, vou utilizar este arquivo para descrever algumas partes do meu raciocinio que vou ter durante o desenvolvimento.
-Estou desenvolvendo nu ubuntu 22.04, ambiente Anaconda e o pycharm como IDE
+Ola, vou utilizar este arquivo para descrever algumas partes do meu raciocinio.
+Ambiente de desenvolvimento: Archlinux, Anaconda e Pycharm.
 
-____________________________________________________________________________________________________________
-São 3 hoteis (Lakewood, Bridgewood e Ridgewood)
+No começo tive problemas com algumas datas, o formato de entrada dava um problema
+com uma função que eu queria usar. (isoweekday() da biblioteca datetime)
+(O erro acontecia devido à função esperar 3 caracteres, exemplo: 'tue' ao inves de 4 como 'tues')
+Então fiz um split retirando essa parte, o que não influenciou em nada,
+pois o retorno dessa função é um inteiro que representa um dia da semana (1 – 5 = dia de semana 6 e 7 = final de semana)
 
-Atributos dos hoteis:
-    - taxas de acordo com o dia
-        - semana
-        - final de semana
-    - tipo de cliente
-        - Regular
-        - Reward (possuem descontos)
-    - classificação (estrelas)
+Eu criei uma classe Hoteis, pois todos os hoteis tem os mesmos atributos, criei também dentro dessa classe a função calcula_estadia.
 
-____________________________________________________________________________________________________________
-# Caracteristicas Hotel Lakewood
-classificação 3
-cliente normal, semana = 110
-cliente fidelizado, semana = 80
-cliente normal, final de semana = 90
-cliente fidelizado, final de semana = 80
-______________________________________________________
-# Caracteristicas Hotel Bridgewood
-classificação 4
-cliente normal, semana = 160
-cliente fidelizado, semana = 110
-cliente normal, final de semana = 60
-cliente fidelizado, final de semana = 50
-______________________________________________________
-# Caracteristicas Hotel Ridgewood
-classificação 5
-cliente normal, semana = 220
-cliente fidelizado, semana = 100
-cliente normal, final de semana = 150
-cliente fidelizado, final de semana = 40
-______________________________________________________
+De início eu pensei em deixar as demais funções também no arquivo hoteis.py, porem achei mais interessante coloca-las
+em outro arquivo (processamento.py) pois aquelas funções fazem exatamente isso,
+a primeira (processa_entrada), manipula a string que é o input fornecido (separando o tipo de cliente e as datas),
+e a segunda (encontra_melhor_hotel) processa os dados dos hoteis, verificando qual o hotel mais barato e melhor.
 
-# Escreva um programa para encontrar o hotel mais barato.
+Como nunca havia tido experiencia com pytest estava a ter alguns problemas, porem só precisei colocar o caminho completo
+dos arquivos nas importações que consegui executar os testes.
 
-A entrada do programa será uma sequência de datas para um cliente participante ou não do programa de fidelidade.
-    - Utilize "Regular" para denominar um cliente normal e "Reward"
-    ex: <tipo_do_cliente>: <data1>, <data2>, <data3>, …
-
-A saída deverá ser o hotel disponível mais barato e em caso de empate, o hotel com a maior classificação deverá ser retornado.
-    ex: <nome_do_hotel_mais_barato>
-
-Exemplos:
-```
-Entrada 1:
-Regular: 16Mar2009(mon), 17Mar2009(tues), 18Mar2009(wed)
-Saída 1:
-Lakewood
-```
-____________________________________________________________________________________________________________
-
-Certo, acho que peguei todas as informações que vou precisar.
-Como todos os hoteis tem os mesmos atributos vou criar uma classe
+fluxo: (processamento da string de entrada) -> (calculo total da estadia para cada hotel) -> (verificar qual o hotel mais barato e melhor)

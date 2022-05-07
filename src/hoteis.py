@@ -5,6 +5,8 @@ class Hoteis:
         self.preco_semana = preco_semana
         self.preco_final_semana = preco_final_semana
 
+    # Segundo passo
+    # Calcula o valor total
     def calcula_estadia(self, tipo_cliente, ds, dfds):
         if tipo_cliente == 'Rewards':
             tc = 1

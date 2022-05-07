@@ -1,15 +1,16 @@
 from datetime import datetime
 
-# entrada = 'Regular: 16Mar2009(mon), 17Mar2009(tues), 18Mar2009(wed)'
+
+# Primeiro passo
+# Extração dos dados da string atravez de splits
 def processa_entrada(entrada):
-    tipo_cliente = entrada.split(':')[0]  # (regular ou reward)
+    tipo_cliente = entrada.split(':')[0]
     datas = []
     for x in entrada.split(':')[1].split(','):
         datas.append(datetime.strptime(x.split('(')[0].strip(), "%d%b%Y"))
 
     qtd_dias_semana = 0
     qtd_dias_fds = 0
-
     for x in datas:
         if x.isoweekday() >= 6:
             qtd_dias_fds += 1
@@ -17,14 +18,14 @@ def processa_entrada(entrada):
             qtd_dias_semana += 1
     return tipo_cliente, qtd_dias_semana, qtd_dias_fds
 
-#print(valor, self.classificacao, self.nome_hotel)
 
+# Terceiro passo
 def encontra_melhor_hotel(hoteis):
     global melhor_hotel, classificacao
-    menor_valor = 1000
+    menor_valor = 100000
 
     for x in hoteis:
-        if menor_valor > x[0]:  # encontrando o menor valor
+        if menor_valor > x[0]:
             menor_valor = x[0]
             melhor_hotel = x[2]
             classificacao = x[1]
@@ -33,5 +34,4 @@ def encontra_melhor_hotel(hoteis):
             melhor_hotel = x[2]
             classificacao = x[1]
 
-    #print(menor_valor, melhor_hotel, classificacao)
     return melhor_hotel

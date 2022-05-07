@@ -1,25 +1,26 @@
-Nearly empty Python3 project with a failing test!
-===
+# Programa de Estágio Syngenta Digital 2022 
 
-**DO NOT change the names of the function (get_cheapest_hotel) or of the file and folder it is in, changing it implies in disqualification.** 
+### Problema da Reserva de Hotel
 
-**Ensure that you have Python 3 installed and that your PIP installation points to it**
+São 3 hoteis, cada um com suas caracteristicas.
 
-To install the required modules:
+Desafio: Escrever um programa para encontrar o melhor e mais barato hotel
+
+**Necessário ter o pytest instalado em seu ambiente**
+
 
 ```
 $ pip install -r requirements.txt
 ```
-or
+ou
 ```
 $ pip3 install -r requirements.txt
 ```
 
 
-To run the (failing) test:
+Para rodar os testes basta executar o pytest no diretorio raiz
 
 ```
 $ py.test
 ```
-
-**After implementing your solution, it should pass the unit tests available.** 
+[Texto alternativo opcional se a imagem não carregar](https://www.syngentadigital.com.br/sites/g/files/zhg1496/f/media/2020/06/12/syt-logo_footer_1.png)
