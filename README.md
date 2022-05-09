@@ -8,6 +8,7 @@ Desafio: Escrever um programa para encontrar o melhor e mais barato hotel
 
 **Necessário ter o pytest instalado em seu ambiente**
 
+
 ```
 $ pip install -r requirements.txt
 ```

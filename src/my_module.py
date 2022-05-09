@@ -8,7 +8,7 @@ Ridgewood = Hoteis('Ridgewood', 5, [220, 100], [150, 40])
 hoteis = [Lakewood, Bridgewood, Ridgewood]
 
 
-def get_cheapest_hotel(entrada):   #DO NOT change the function's name
+def get_cheapest_hotel(entrada):
     tipo_cliente, qtd_dia_semana, qtd_dia_final_semana = processamento.processa_entrada(entrada)
     info_hoteis = []
     for x in hoteis:
